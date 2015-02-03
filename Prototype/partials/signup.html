@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">Account Creation</div>
+            <div class="panel-body">
+            <form id="creation_form">
+                <div class="form-group">
+                    <label for="email">Email Address: </label>
+                    <input type="text" class="form-control" ng-model="signUpEmail" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control" ng-model="signUpPassword" placeholder="Enter a password" required />
+                </div>
+                <p><i>Password Strength</i></p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger password_strength" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default"n ng-click="signUp()">Create Account</button>
+            </form>
+        </div>
+    </div>
+</div>

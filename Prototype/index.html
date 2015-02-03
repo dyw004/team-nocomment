@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html ng-app="TCG">
+
+<head>
+    <title>Telecom Communications Group, LLC.</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="js/baasbox.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.complexify.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default" ng-controller="navController">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">Telecom Company Group</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="nav navbar-nav btn-group">
+                        <a class="btn btn-default navbar-btn" href="#/" ng-model="radioModel" btn-radio="'Home'">Home</a>
+                        <a class="btn btn-default navbar-btn" href="#/signup" ng-model="radioModel" btn-radio="'Sign Up'">Sign Up</a>
+                        <a class="btn btn-default navbar-btn" href="#/stuff" ng-model="radioModel" btn-radio="'Stuff'">Stuff</a>
+                    </div>
+                    <a class="btn btn-default navbar-btn visibleDashButton" href="#/dashboard" ng-model="radioModel" btn-radio="'Dashboard'" ng-class="{'hideDashButton': !loggedIn()}">Dashboard</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="navbar-form navAnimate" ng-hide="loggedIn()">
+                                <input type="text" class="form-control" ng-model="signInEmail" placeholder="Email">
+                                <input type="password" class="form-control" ng-model="signInPassword" placeholder="Password">
+                            </form>
+                        </li>
+                        <li><button type="submit" class="btn btn-default navbar-btn" ng-click="signIn()">{{loggedIn() && "Logout" || "Sign In"}}</button></li>
+                        <alert class="signInAlert navbar-right" ng-repeat="alert in alerts" type="danger" close="closeAlert($index)">Username and Password combination does not exist.</alert>
+                    </ul>
+                </div> <!--nav collapse-->
+            </div> <!--container-->
+        </nav> <!-- navbar -->
+        
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

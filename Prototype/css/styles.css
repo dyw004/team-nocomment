@@ -1,0 +1,45 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  background-color: #eee;
+  overflow:hidden;
+}
+
+.jumbotron
+{ background-image: url('../assets/images/cat.jpg');
+    background-size:100%;
+    background-position:center center;
+    min-height:500px;
+}
+
+.signInAlert
+{
+    position: fixed;
+    z-index: 100;
+    top: 70px;
+}
+
+.visibleDashButton
+{
+    transition:0.5s;
+}
+.hideDashButton
+{
+    opacity:0;
+    transition:0.5s;
+    visibility:hidden;
+}
+
+.navAnimate.ng-hide-add { opacity:1; transition:0.5s; }
+.navAnimate.ng-hide-add-active { opacity:0; }
+.navAnimate.ng-hide-remove { opacity:0; transition:0.5s; }
+.navAnimate.ng-hide-remove-active { opacity:1; }
+.navAnimate.ng-show-add { opacity:1; transition:0.5s; }
+.navAnimate.ng-show-add-active { opacity:0; }
+.navAnimate.ng-show-remove { opacity:0; transition:0.5s; }
+.navAnimate.ng-show-remove-active { opacity:1; }
+
+.ng-enter { transform:translate(0,25px);transition:0.3s; opacity:0; }
+.ng-enter-active { transform:translate(0,0);transition-delay:0.3s; opacity:1; }
+.ng-leave { transition:0.3s; opacity:1; }
+.ng-leave-active { transform:translate(0,-25px);opacity:0; }
